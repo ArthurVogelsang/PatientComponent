@@ -14,20 +14,18 @@ This Patient Component is the simple component for testing.
 
 ## Project Structure
 
-I use the Atomic Design Pattern (atoms > molecules > organisms > templates > pages) for UI pattern.
-
 * __tests__
 * pages
 * templates
-* UI
+* components
 * utils
 
 ## Run the project
 
-* yarn dev
-* yarn build
+* yarn dev (development)
+* yarn build (production)
 * yarn start
-* yarn test:watch
+* yarn test:watch (unit test)
 
 ## Deploy
 
