@@ -14,10 +14,15 @@ This Patient Component is the simple component for testing.
 
 ## Project Structure
 
+I use Atomic Design Pattern (atoms > molecules > organisms > templates > pages) for UI pattern, but I omitted the atoms, molecules, organisms because its simple component
+
 * __tests__
 * pages
 * templates
-* components
+* ui
+  * atoms
+  * molecules
+  * organisms
 * utils
 
 ## Run the project
