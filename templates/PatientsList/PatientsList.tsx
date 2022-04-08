@@ -8,8 +8,11 @@ import list from "./list.json";
 import { groupBy } from "./util";
 import { TPatient } from "utils/types";
 
-function PatientsPage() {
+/* Patients List Component */
+function PatientsList() {
   const [query, setQuery] = useState("");
+
+  /* Fuse Search */
   const fuse = new Fuse(list, {
     keys: [{ name: "name", weight: 1 }],
     threshold: 0.1,
@@ -17,7 +20,7 @@ function PatientsPage() {
   });
 
   const results = fuse.search(query);
-
+  /* Group by date */
   const searchResults = groupBy(
     query ? results.map((result: { item: TPatient }) => result.item) : list,
     "date"
@@ -31,16 +34,18 @@ function PatientsPage() {
   return (
     <>
       <PageHeader />
-      <PatientsPageBody>
+      <PatientsListBody>
         <SearchInput value={query} onChange={onSearch} />
         {Object.keys(searchResults).map((_date: string, _i) =>
           searchResults[_date] && searchResults[_date].length > 0 ? (
             <Block key={_i}>
+              {/* Group Date */}
               <GroupTitle>
                 {moment(parseInt(_date) * 1000)
                   .utc()
                   .format("MMMM DD")}
               </GroupTitle>
+              {/* Patient Cards */}
               {searchResults[_date].map((_item: TPatient, _j: number) => (
                 <PatientCard key={_j} item={_item} />
               ))}
@@ -49,17 +54,17 @@ function PatientsPage() {
             <div key={_i} />
           )
         )}
-      </PatientsPageBody>
+      </PatientsListBody>
     </>
   );
 }
 
-export default PatientsPage;
+export default PatientsList;
 
 const Block = styled.div`
   margin-bottom: 25px;
 `;
-const PatientsPageBody = styled.div`
+const PatientsListBody = styled.div`
   position: relative;
   top: -19px;
   max-width: 428px;

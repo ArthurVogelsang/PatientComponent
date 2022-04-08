@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['https://joeschmoe.io'],
+    domains: ['png.pngtree.com', 'www.w3schools.com', 'encrypted-tbn0.gstatic.com', 'www.gravatar.com'],
   },
 }
 

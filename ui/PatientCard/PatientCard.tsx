@@ -1,21 +1,26 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Image from 'next/image'
 import styled from "styled-components";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import moment from "moment";
 import { TPatient } from "utils/types";
 
+/* Patient Card Component */
 function PatientCard({ item }: { item: TPatient }) {
   return (
     <PatientCardContainer data-testid="patient-card">
+      {/* Avatar */}
       <PatientAvatar>
-        <img
+        <Image
           src={item.image}
           alt="avatar"
+          layout="fill"
         />
       </PatientAvatar>
       <PatientInfo>
+        {/* Time */}
         <CardDate>{moment(item.date * 1000).fromNow()}</CardDate>
+        {/* Date */}
         <CardName>{item.name}</CardName>
       </PatientInfo>
       <BsFillPlusCircleFill size={24} color="#fff" />
@@ -37,6 +42,7 @@ const PatientCardContainer = styled.div`
   margin-top: 12px;
 `;
 const PatientAvatar = styled.div`
+  position: relative;
   min-width: 50px;
   width: 50px;
   height: 50px;

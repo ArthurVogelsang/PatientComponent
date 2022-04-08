@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 
+/* Search Component */
 function SearchInput({
   value,
   onChange,
