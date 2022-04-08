@@ -1,5 +1,5 @@
-import PatientCard from "components/PatientCard";
-import SearchInput from "components/SearchInput";
+import PatientCard from "ui/PatientCard";
+import SearchInput from "ui/SearchInput";
 import React, { useState } from "react";
 import moment from "moment";
 import Fuse from "fuse.js";

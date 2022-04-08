@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import PatientCard from 'components/PatientCard'
+import PatientCard from 'ui/PatientCard'
 
 const renderComponent = () =>
   render(

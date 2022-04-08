@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
-import SearchInput from 'components/SearchInput'
+import SearchInput from 'ui/SearchInput'
 
 const renderComponent = () =>
   render(
