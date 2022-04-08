@@ -13,6 +13,7 @@ function SearchInput({
     <SearchInputContainer>
       <SearchIcon />
       <Search
+        data-testid="input"
         placeholder="Search for patients, and more"
         value={value}
         onChange={onChange}

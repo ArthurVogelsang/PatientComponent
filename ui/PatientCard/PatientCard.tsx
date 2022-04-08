@@ -7,7 +7,7 @@ import { TPatient } from "utils/types";
 
 function PatientCard({ item }: { item: TPatient }) {
   return (
-    <PatientCardContainer>
+    <PatientCardContainer data-testid="patient-card">
       <PatientAvatar>
         <img
           src={item.image}
